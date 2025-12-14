@@ -1,0 +1,38 @@
+#Python Quiz
+
+#Variable for Questions,Options and Answers (Immutable)
+question=('What is my name:',
+          "What is my age:",
+          'Who is my favourite F1 driver:')
+
+options=(('A.Abhinand','B.Aswathi','C.Dhananjayan','D.Divya'),
+('A.17','B.16','C.14','D.15'),
+('A.Max Verstappen','B.Lewis Hamilton','C.Charles Leclerc','D.Lando Norris'))
+
+answers=(('A'),('B'),('A'))
+
+#Variables for Score, Question.No and Guesses (Mutable) 
+guesses=[]
+
+score=0
+question_num=0
+
+#Code to run the quiz (if and else conditions)
+for q in question:
+    print('-------------------')
+    print(q)
+    for o in options[question_num]:
+        print(o)
+        
+    guess=input('Enter your answer(A,B,C,D):').upper()
+    guesses.append(guess)
+    if guess == answers[question_num]:
+        score+=1
+        print('Correct! Gained a point...')
+    else:
+        print(f'Incorrect, the answer was {answers[question_num]}')
+    question_num+=1
+
+#Code to end the game displaying scores
+print('-------------------')    
+print(f'Game is over! And you scored {score} pts...')
